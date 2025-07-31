@@ -51,7 +51,7 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
 
 ---
 
-## Tecnologías Utilizadas
+## Herramientas
 
 * **Lenguaje:** Python
 * **Análisis de Datos:** Pandas
@@ -79,6 +79,16 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
     ```bash
     streamlit run app.py
     ```
+
+## Estructura del Repositorio
+
+* `analisis_exploratorio.ipynb` Notebook con la limpieza y el EDA
+* `app.py` El script de la aplicación web Streamlit
+* `requirements.txt` Las librerías de Python necesarias para ejecutar el proyecto
+* `/data`: Carpeta que contiene los archivos de datos:
+        `2019.csv 2020.csv 2021.csv 2022.csv 2023.csv`
+        `comunas.geojson`
+        `emisiones_consolidadas_limpias.parquet`
 
 ---
 
