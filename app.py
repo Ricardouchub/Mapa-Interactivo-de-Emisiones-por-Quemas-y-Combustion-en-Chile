@@ -46,13 +46,12 @@ st.markdown("Análisis de emisiones de fuentes difusas (2019-2023)")
 st.sidebar.header('Filtros de Búsqueda')
 selected_years = st.sidebar.slider('Selecciona un rango de años:', min_value=int(df['ano'].min()), max_value=int(df['ano'].max()), value=(int(df['ano'].min()), int(df['ano'].max())))
 
-# --- CAMBIO 1: LÓGICA DEL FILTRO DE REGIÓN ---
+# --- LÓGICA DEL FILTRO DE REGIÓN ---
 regiones_disponibles = sorted(df['region'].unique())
 opciones_region = ['Todas'] + regiones_disponibles
 selected_regions = st.sidebar.multiselect('Regiones:', options=opciones_region, default=['Todas'])
 
-# --- FIN DEL CAMBIO 1 ---
-
+# --- Lógica de Filtrado de Fuente y Contaminante ---
 fuentes_disponibles = sorted(df['tipo_fuente'].unique())
 selected_source = st.sidebar.selectbox('Tipo de fuente:', options=['Todas'] + fuentes_disponibles)
 contaminantes_disponibles = sorted(df['contaminantes'].unique())
@@ -61,13 +60,11 @@ selected_pollutant = st.sidebar.selectbox('Contaminante:', options=['Todos'] + c
 # --- Lógica de Filtrado ---
 df_filtrado = df[(df['ano'] >= selected_years[0]) & (df['ano'] <= selected_years[1])]
 
-# --- CAMBIO 2: LÓGICA DE FILTRADO PARA "TODAS" LAS REGIONES ---
+# --- Lógica del filtrado "Todas" ---
 if selected_regions: # Si hay algo seleccionado
     if 'Todas' not in selected_regions: # Y si "Todas" no está en la selección
         df_filtrado = df_filtrado[df_filtrado['region'].isin(selected_regions)]
 # Si "Todas" está seleccionado, o si no hay nada seleccionado, no se aplica el filtro de región.
-
-# --- FIN DEL CAMBIO 2 ---
 
 if selected_source != 'Todas':
     df_filtrado = df_filtrado[df_filtrado['tipo_fuente'] == selected_source]
@@ -137,7 +134,7 @@ with tab3:
     else:
         st.warning("No hay datos para mostrar con los filtros seleccionados.")
 # --- PIE DE PÁGINA ---
-st.markdown("---") # Añade una línea horizontal
+st.markdown("---") 
 st.markdown(
     """
     <div style="text-align: center;">
@@ -148,7 +145,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-# Reemplaza tu bloque de CSS existente con este
+# --- Estilos CSS ---
+# Añadimos estilos CSS para un diseño más moderno y limpio
 st.markdown(
     """
     <style>
