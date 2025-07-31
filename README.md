@@ -1,4 +1,4 @@
-# Atlas Interactivo de Emisiones en Chile (2019-2023)
+# Atlas Interactivo de Emisiones de fuentes difusas en Chile (2019-2023)
 
 ![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.36-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
@@ -11,7 +11,9 @@ Este repositorio contiene el código y los datos para un dashboard interactivo q
 
 ###  [Ver Proyecto en Vivo](https://atlas-interactivo-de-emisiones-en-chile-2019-2023.streamlit.app/) 
 
-![Demo del Dashboard](https://i.imgur.com/eBq6rV1.png)
+<img width="757" height="375" alt="image" src="https://github.com/user-attachments/assets/6eedb848-de04-48fc-92cf-31440ea05e75" />
+
+
 
 ---
 
@@ -56,7 +58,7 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
 * **Visualización Interactiva:** Plotly Express
 * **Aplicación Web:** Streamlit
 * **Manejo de Datos Geoespaciales:** GeoJSON, JSON
-* **Almacenamiento Eficiente:** PyArrow (para formato Parquet)
+* **Almacenamiento Eficiente:** PyArrow (formato Parquet)
 
 ---
 
@@ -68,18 +70,12 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
     cd Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile
     ```
 
-2.  **(Opcional pero recomendado) Crear un entorno virtual:**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # En Windows: venv\Scripts\activate
-    ```
-
-3.  **Instalar las dependencias:**
+2.  **Instalar las dependencias:**
     ```bash
     pip install -r requirements.txt
     ```
 
-4.  **Ejecutar la aplicación:**
+3.  **Ejecutar la aplicación:**
     ```bash
     streamlit run app.py
     ```
