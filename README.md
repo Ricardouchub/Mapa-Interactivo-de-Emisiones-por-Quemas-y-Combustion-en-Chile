@@ -89,7 +89,7 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
         `2019.csv 2020.csv 2021.csv 2022.csv 2023.csv`
         `comunas.geojson`
         `emisiones_consolidadas_limpias.parquet`
-  * `/img`: Carpeta que contiene las imagenes generadas en el notebook
+* `/img`: Carpeta que contiene las imagenes generadas en el notebook
 
 ---
 
