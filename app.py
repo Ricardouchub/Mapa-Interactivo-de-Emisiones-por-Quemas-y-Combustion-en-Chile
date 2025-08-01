@@ -7,14 +7,38 @@ import json
 # --- Configuración de la página ---
 st.set_page_config(page_title="Atlas de Emisiones - Chile", page_icon="💨", layout="wide")
 
-# --- Carga de Datos ---
+# Carga de Datos Optimizada
 @st.cache_data
 def cargar_datos():
     ruta_archivo = os.path.join('data', 'emisiones_consolidadas_limpias.parquet')
-    if os.path.exists(ruta_archivo):
-        return pd.read_parquet(ruta_archivo)
-    else:
+    if not os.path.exists(ruta_archivo):
         st.error(f"Error: No se encontró el archivo de datos en la ruta: {ruta_archivo}")
+        return None
+
+    # 1. Definimos solo las columnas que realmente usamos en la app
+    columnas_necesarias = [
+        'ano', 'region', 'comuna', 'id_comuna', 'tipo_fuente', 
+        'contaminantes', 'cantidad_toneladas'
+    ]
+    
+    # 2. Especificamos tipos de datos más eficientes en memoria
+    tipos_de_datos = {
+        'region': 'category',
+        'comuna': 'category',
+        'tipo_fuente': 'category',
+        'contaminantes': 'category',
+        'ano': 'int16',
+        'id_comuna': 'int32',
+        'cantidad_toneladas': 'float32'
+    }
+
+    try:
+        # Leemos el archivo usando solo las columnas y tipos de datos especificados
+        df = pd.read_parquet(ruta_archivo, columns=columnas_necesarias)
+        df = df.astype(tipos_de_datos)
+        return df
+    except Exception as e:
+        st.error(f"Error al leer u optimizar el archivo Parquet: {e}")
         return None
 
 @st.cache_data
@@ -44,7 +68,7 @@ if df is None or geojson_chile is None:
 st.title('Atlas Interactivo de Emisiones de fuentes difusas en Chile (2019-2023)')
 st.markdown("""
 > Este panel interactivo presenta un análisis de las emisiones de fuentes difusas en Chile para el período 2019-2023. 
-> Los datos revelan que la **combustión de leña residencial** es una de las fuentes de emisión más constantes y extendidas, con una alta concentración en las regiones del **centro-sur del país**, especialmente durante los meses más fríos.
+> Los datos revelan que la **combustión de leña residencial** es una de las fuentes de emisión más constantes y extendidas, con una alta concentración en las regiones del **centro-sur del país**.
 > 
 > Destaca un **evento anómalo en el año 2023**, donde las emisiones por **incendios forestales** se dispararon a niveles históricos, reflejando la severidad de la temporada de incendios de ese verano y convirtiéndose en la principal fuente de contaminación de todo el período analizado.
 > 
@@ -53,12 +77,10 @@ st.markdown("""
 st.sidebar.header('Filtros de Búsqueda')
 selected_years = st.sidebar.slider('Selecciona un rango de años:', min_value=int(df['ano'].min()), max_value=int(df['ano'].max()), value=(int(df['ano'].min()), int(df['ano'].max())))
 
-# --- LÓGICA DEL FILTRO DE REGIÓN ---
 regiones_disponibles = sorted(df['region'].unique())
 opciones_region = ['Todas'] + regiones_disponibles
 selected_regions = st.sidebar.multiselect('Regiones:', options=opciones_region, default=['Todas'])
 
-# --- Lógica de Filtrado de Fuente y Contaminante ---
 fuentes_disponibles = sorted(df['tipo_fuente'].unique())
 selected_source = st.sidebar.selectbox('Tipo de fuente:', options=['Todas'] + fuentes_disponibles)
 contaminantes_disponibles = sorted(df['contaminantes'].unique())
@@ -67,11 +89,9 @@ selected_pollutant = st.sidebar.selectbox('Contaminante:', options=['Todos'] + c
 # --- Lógica de Filtrado ---
 df_filtrado = df[(df['ano'] >= selected_years[0]) & (df['ano'] <= selected_years[1])]
 
-# --- Lógica del filtrado "Todas" ---
-if selected_regions: # Si hay algo seleccionado
-    if 'Todas' not in selected_regions: # Y si "Todas" no está en la selección
+if selected_regions:
+    if 'Todas' not in selected_regions:
         df_filtrado = df_filtrado[df_filtrado['region'].isin(selected_regions)]
-# Si "Todas" está seleccionado, o si no hay nada seleccionado, no se aplica el filtro de región.
 
 if selected_source != 'Todas':
     df_filtrado = df_filtrado[df_filtrado['tipo_fuente'] == selected_source]
@@ -140,8 +160,9 @@ with tab3:
         st.plotly_chart(fig_line_anual, use_container_width=True)
     else:
         st.warning("No hay datos para mostrar con los filtros seleccionados.")
+
 # --- PIE DE PÁGINA ---
-st.markdown("---") 
+st.markdown("---")
 st.markdown(
     """
     <div style="text-align: center;">
@@ -152,12 +173,11 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
 # --- Estilos CSS ---
-# Añadimos estilos CSS para un diseño más moderno y limpio
 st.markdown(
     """
     <style>
-    /* CSS para un look más moderno y limpio */
     .stApp {
         background-color: #ffffff;
     }
@@ -178,14 +198,12 @@ st.markdown(
     .st-emotion-cache-1y4p8pa {
         max-width: 95%;
     }
-
-    /* --- NUEVO ESTILO SIMPLE PARA BOTONES --- */
     .footer-btn {
         background-color: transparent;
-        color: #1F618D; /* Color principal del tema */
+        color: #1F618D;
         padding: 8px 20px;
         border-radius: 8px;
-        border: 2px solid #1F618D; /* Borde con el color principal */
+        border: 2px solid #1F618D;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -195,7 +213,7 @@ st.markdown(
         transition-duration: 0.4s;
     }
     .footer-btn:hover {
-        background-color: #1F618D; /* Relleno al pasar el mouse */
+        background-color: #1F618D;
         color: white;
     }
     </style>
