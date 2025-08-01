@@ -8,7 +8,7 @@
 Este repositorio contiene el código y los datos para un dashboard interactivo que analiza las emisiones de fuentes difusas en Chile.
 
 ---
-
+####  [Notebook](https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile/blob/main/Atlas_Interactivo_Emisiones_Chile.ipynb)
 ###  [Ver Dashboard](https://atlas-interactivo-de-emisiones-en-chile-2019-2023.streamlit.app/) 
 
 <img width="757" height="375" alt="image" src="https://github.com/user-attachments/assets/6eedb848-de04-48fc-92cf-31440ea05e75" />
