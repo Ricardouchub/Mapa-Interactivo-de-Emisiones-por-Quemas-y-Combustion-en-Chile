@@ -46,10 +46,10 @@ if df is None or geojson_chile is None:
     st.stop()
 
 # --- Título y Filtros ---
-st.title('💨 Atlas Interactivo de Emisiones de fuentes difusas en Chile (2019-2023)')
+st.title('Atlas Interactivo de Emisiones de fuentes difusas en Chile (2019-2023)')
 st.markdown("""
 > Este panel interactivo presenta un análisis de las emisiones de fuentes difusas en Chile para el período 2019-2023. 
-> Los datos revelan que la **combustión de leña residencial** es una de las fuentes de emisión más constantes y extendidas, con una alta concentración en las regiones del **centro-sur del país**, especialmente durante los meses más fríos.
+> Los datos revelan que la **combustión de leña residencial** es una de las fuentes de emisión más constantes y extendidas, con una alta concentración en las regiones del **centro-sur del país**.
 > Destaca un **evento anómalo en el año 2023**, donde las emisiones por **incendios forestales** se dispararon a niveles históricos, reflejando la severidad de la temporada de incendios de ese verano y convirtiéndose en la principal fuente de contaminación de todo el período analizado.
 > Te invitamos a utilizar los filtros para explorar estos patrones en detalle.
 """)
@@ -74,7 +74,7 @@ if selected_pollutant != 'Todos':
     df_filtrado = df_filtrado[df_filtrado['contaminantes'] == selected_pollutant]
 
 # --- Pestañas ---
-tab1, tab2, tab3 = st.tabs(["📍 Mapa de Emisiones", "📊 Análisis por Zona", "📈 Tendencias Anuales"])
+tab1, tab2, tab3 = st.tabs(["Mapa de Emisiones", "Análisis por Zona", "Tendencias Anuales"])
 
 with tab1:
     st.header("Mapa de Emisiones por Comuna")
