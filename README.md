@@ -41,7 +41,7 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
 
 3.  **Visualización y Desarrollo del Dashboard:**
     * Se utilizó **Streamlit** para construir la aplicación web interactiva.
-    * Se implementó un mapa coroplético de Chile usando **Plotly Express** y un archivo GeoJSON para visualizar la distribución geográfica de las emisiones por comuna.
+    * Se implementó un mapa coroplético de Chile usando **Plotly Express** y un archivo [GeoJSON](https://github.com/fcortes/Chile-GeoJSON/tree/master) para visualizar la distribución geográfica de las emisiones por comuna.
     * Se añadieron filtros dinámicos por año, región, fuente y tipo de contaminante.
     * El contenido se organizó en pestañas para una navegación clara e intuitiva.
 
