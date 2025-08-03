@@ -66,7 +66,7 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile.git](https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile.git)
+    git clone https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile.git
     cd Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile
     ```
 
