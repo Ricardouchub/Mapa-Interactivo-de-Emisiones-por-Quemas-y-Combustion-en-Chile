@@ -49,8 +49,10 @@ if df is None or geojson_chile is None:
 st.title('Atlas Interactivo de Emisiones de fuentes difusas en Chile (2019-2023)')
 st.markdown("""
 > Este panel interactivo presenta un análisis de las emisiones de fuentes difusas en Chile para el período 2019-2023. 
+>
 > Los datos revelan que la **combustión de leña residencial** es una de las fuentes de emisión más constantes y extendidas, con una alta concentración en las regiones del **centro-sur del país**.
 > Destaca un **evento anómalo en el año 2023**, donde las emisiones por **incendios forestales** se dispararon a niveles históricos, reflejando la severidad de la temporada de incendios de ese verano y convirtiéndose en la principal fuente de contaminación de todo el período analizado.
+>
 > Te invitamos a utilizar los filtros para explorar estos patrones en detalle.
 >
 >**Fuente de datos:** **[Registro de Emisiones y Transferencia de Contaminantes (RETC)](https://datosretc.mma.gob.cl/dataset/emisiones-al-aire)**
