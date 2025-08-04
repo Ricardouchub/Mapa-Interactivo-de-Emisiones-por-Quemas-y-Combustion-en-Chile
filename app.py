@@ -46,7 +46,7 @@ if df is None or geojson_chile is None:
     st.stop()
 
 # --- Título y Filtros ---
-st.title('Atlas Interactivo de Emisiones de fuentes difusas en Chile (2019-2023)')
+st.image("img/banner.png")
 st.markdown("""
 > Este panel interactivo presenta un análisis de las emisiones de fuentes difusas en Chile para el período 2019-2023. 
 >
