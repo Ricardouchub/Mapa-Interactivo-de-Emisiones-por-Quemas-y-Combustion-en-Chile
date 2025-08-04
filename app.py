@@ -52,6 +52,8 @@ st.markdown("""
 > Los datos revelan que la **combustión de leña residencial** es una de las fuentes de emisión más constantes y extendidas, con una alta concentración en las regiones del **centro-sur del país**.
 > Destaca un **evento anómalo en el año 2023**, donde las emisiones por **incendios forestales** se dispararon a niveles históricos, reflejando la severidad de la temporada de incendios de ese verano y convirtiéndose en la principal fuente de contaminación de todo el período analizado.
 > Te invitamos a utilizar los filtros para explorar estos patrones en detalle.
+>
+>**Fuente de datos:** **[Registro de Emisiones y Transferencia de Contaminantes (RETC)](https://datosretc.mma.gob.cl/dataset/emisiones-al-aire)**
 """)
 st.sidebar.header('Filtros de Búsqueda')
 selected_years = st.sidebar.slider('Selecciona un rango de años:', min_value=int(df['ano'].min()), max_value=int(df['ano'].max()), value=(int(df['ano'].min()), int(df['ano'].max())))
