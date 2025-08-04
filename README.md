@@ -9,7 +9,7 @@ Este repositorio contiene el código y los datos para un dashboard interactivo q
 
 ---
 ####  [Notebook](https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile/blob/main/Atlas_Interactivo_Emisiones_Chile.ipynb)
-###  [Ver Dashboard](https://atlas-interactivo-de-emisiones-en-chile-2019-2023.streamlit.app/) 
+###  [Aplicación Web](https://atlas-interactivo-de-emisiones-en-chile-2019-2023.streamlit.app/) 
 
 <img width="757" height="375" alt="image" src="https://github.com/user-attachments/assets/6eedb848-de04-48fc-92cf-31440ea05e75" />
 
@@ -21,7 +21,7 @@ Este repositorio contiene el código y los datos para un dashboard interactivo q
 
 Este proyecto realiza un análisis de datos de extremo a extremo, desde la recopilación y limpieza de datos públicos hasta el despliegue de una aplicación web. El objetivo es visualizar y analizar las emisiones al aire provenientes de fuentes difusas (quemas agrícolas, incendios forestales, combustión de leña, etc.) en Chile, para el período 2019-2023.
 
-La fuente de datos es el **Registro de Emisiones y Transferencia de Contaminantes (RETC)** del Ministerio del Medio Ambiente de Chile.
+**Fuente de datos:** **[Registro de Emisiones y Transferencia de Contaminantes (RETC)](https://datosretc.mma.gob.cl/dataset/emisiones-al-aire)** del Ministerio del Medio Ambiente de Chile.
 
 ---
 
@@ -41,7 +41,7 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
 
 3.  **Visualización y Desarrollo del Dashboard:**
     * Se utilizó **Streamlit** para construir la aplicación web interactiva.
-    * Se implementó un mapa coroplético de Chile usando **Plotly Express** y un archivo GeoJSON para visualizar la distribución geográfica de las emisiones por comuna.
+    * Se implementó un mapa coroplético de Chile usando **Plotly Express** y un archivo [GeoJSON](https://github.com/fcortes/Chile-GeoJSON/tree/master) para visualizar la distribución geográfica de las emisiones por comuna.
     * Se añadieron filtros dinámicos por año, región, fuente y tipo de contaminante.
     * El contenido se organizó en pestañas para una navegación clara e intuitiva.
 
@@ -66,7 +66,7 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
 
 1.  **Clonar el repositorio:**
     ```bash
-    git clone [https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile.git](https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile.git)
+    git clone https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile.git
     cd Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile
     ```
 
