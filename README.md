@@ -4,8 +4,8 @@
   <img src="https://img.shields.io/badge/Proyecto_Completado-%E2%9C%94-2ECC71?style=flat-square&logo=checkmarx&logoColor=white" alt="Proyecto Completado"/>
   <img src="https://img.shields.io/badge/Python-3.9%2B-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
   <img src="https://img.shields.io/badge/Streamlit-App_Interactiva-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit"/>
-  <img src="https://img.shields.io/badge/Folium-Mapas_Interactivos-77B829?style=flat-square&logo=leaflet&logoColor=white" alt="Folium"/>
-  <img src="https://img.shields.io/badge/Plotly-Visualización_Interactiva-3F4F75?style=flat-square&logo=plotly&logoColor=white" alt="Plotly"/>
+  <img src="https://img.shields.io/badge/Folium-Mapas-77B829?style=flat-square&logo=leaflet&logoColor=white" alt="Folium"/>
+  <img src="https://img.shields.io/badge/Plotly-Visualización-3F4F75?style=flat-square&logo=plotly&logoColor=white" alt="Plotly"/>
 </p>
 
 
