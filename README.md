@@ -12,7 +12,6 @@
 Este proyecto realiza un análisis de datos de extremo a extremo, desde la recopilación y limpieza de datos públicos hasta el despliegue de una aplicación web. El objetivo es visualizar y analizar las emisiones al aire provenientes de fuentes difusas (quemas agrícolas, incendios forestales, combustión de leña, etc.) en Chile, para el período 2019-2023.
 Este repositorio contiene el código y los datos para un dashboard interactivo que analiza las emisiones de fuentes difusas en Chile.
 
-**Fuente de datos:** **[Registro de Emisiones y Transferencia de Contaminantes (RETC)](https://datosretc.mma.gob.cl/dataset/emisiones-al-aire)** del Ministerio del Medio Ambiente de Chile.
 
 ###  [Aplicación Web](https://atlas-interactivo-de-emisiones-en-chile-2019-2023.streamlit.app/) 
 
@@ -61,24 +60,6 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
 
 ---
 
-## Cómo ejecutar este proyecto localmente
-
-1.  **Clonar el repositorio:**
-    ```bash
-    git clone https://github.com/Ricardouchub/Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile.git
-    cd Atlas-Interactivo-de-Emisiones-por-Quemas-y-Combustion-en-Chile
-    ```
-
-2.  **Instalar las dependencias:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Ejecutar la aplicación:**
-    ```bash
-    streamlit run app.py
-    ```
-
 ## Estructura del Repositorio
 
 * `analisis_exploratorio.ipynb` Notebook con la limpieza y el EDA
@@ -89,6 +70,12 @@ El flujo de trabajo siguió las etapas estándar de un proyecto de ciencia de da
         `comunas.geojson`
         `emisiones_consolidadas_limpias.parquet`
 * `/img/`: Carpeta que contiene las imagenes generadas en el notebook
+
+---
+
+## Fuente de datos
+
+**[Registro de Emisiones y Transferencia de Contaminantes (RETC)](https://datosretc.mma.gob.cl/dataset/emisiones-al-aire)** del Ministerio del Medio Ambiente de Chile.
 
 ---
 
