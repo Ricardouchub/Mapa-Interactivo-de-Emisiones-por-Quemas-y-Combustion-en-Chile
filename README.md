@@ -1,4 +1,4 @@
-# Atlas Interactivo de Emisiones de fuentes difusas en Chile (2019-2023)
+# Mapa Interactivo de Emisiones de fuentes difusas en Chile (2019-2023)
 
 <p align="left">
   <img src="https://img.shields.io/badge/Proyecto_Completado-%E2%9C%94-2ECC71?style=flat-square&logo=checkmarx&logoColor=white" alt="Proyecto Completado"/>
