@@ -9,7 +9,7 @@
 </p>
 
 
-Este proyecto realiza un análisis de datos de extremo a extremo, desde la recopilación y limpieza de datos públicos hasta el despliegue de una aplicación web. El objetivo es visualizar y analizar las emisiones al aire provenientes de fuentes difusas (quemas agrícolas, incendios forestales, combustión de leña, etc.) en Chile, para el período 2019-2023.
+Este proyecto realiza un análisis de datos desde la recopilación y limpieza de datos públicos, hasta el despliegue de una aplicación web. El objetivo es visualizar y analizar las emisiones al aire provenientes de fuentes difusas (quemas agrícolas, incendios forestales, combustión de leña, etc.) en Chile, para el período 2019-2023.
 Este repositorio contiene el código y los datos para un dashboard interactivo que analiza las emisiones de fuentes difusas en Chile.
 
 
